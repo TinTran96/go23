@@ -15,21 +15,32 @@ func main() {
 	flag.Parse()
 
 	var input []string
-
+	var isValid bool = false
 	if *mixFlags != "foo" {
 		input = append(flag.Args(), *mixFlags)
+		ultil.Sort("mix", input)
 	} else {
 		if *intFlags != "foo" {
 			input = append(flag.Args(), *intFlags)
+			isValid = ultil.ValidateInput("int", input)
+			if isValid {
+				ultil.Sort("int", input)
+			} else {
+				fmt.Println("Invalid Input")
+			}
 		} else {
 			if *strFlags != "foo" {
 				input = append(flag.Args(), *strFlags)
+				isValid = ultil.ValidateInput("string", input)
+				if isValid {
+					ultil.Sort("string", input)
+				} else {
+					fmt.Println("Invalid Input")
+				}
 			} else {
 				fmt.Println("Invalid Flag")
 			}
 		}
 	}
-
-	ultil.Sort(input)
 
 }
