@@ -14,7 +14,7 @@ func checkIntExist(arr []int, key int) bool {
 	return false
 }
 
-func numDifferentIntegers(word string) {
+func numDifferentIntegers(word string) []int {
 	var arrInt []int
 	var num string = ""
 	for i := 0; i < len(word); i++ {
@@ -38,14 +38,24 @@ func numDifferentIntegers(word string) {
 			}
 		}
 	}
+	return arrInt
 
-	for i := 0; i < len(arrInt); i++ {
-		fmt.Printf("%d \t", arrInt[i])
+}
+
+func printResult(arrInt []int) {
+	fmt.Printf("%d(", len(arrInt))
+	sizeArrInt := len(arrInt)
+	for i := 0; i < sizeArrInt; i++ {
+		fmt.Printf("%d", arrInt[i])
+		if i != (sizeArrInt - 1) {
+			fmt.Printf(", ")
+		}
 	}
+	fmt.Printf(")")
 }
 
 func main() {
-	word := "A1b01c001"
+	word := "a123bc34d8ef34"
 
-	numDifferentIntegers(word)
+	printResult(numDifferentIntegers(word))
 }
