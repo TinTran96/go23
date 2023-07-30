@@ -1,3 +1,6 @@
 go 1.20
 
-use ./exercise2
+use (
+	./assignment/web-scraper-go
+	./exercise2
+)
