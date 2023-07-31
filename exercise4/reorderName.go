@@ -1,8 +1,4 @@
-package main
-
-import (
-	"os"
-)
+package ex4
 
 func reorderNameVN(inputName []string, size int) string {
 	var firstName string
@@ -58,7 +54,7 @@ func reorderNameUS(inputName []string, size int) string {
 	return result
 }
 
-func reorderName(input []string) string {
+func ReorderName(input []string) string {
 	size := len(input)
 	countryCode := input[size-1]
 
@@ -71,11 +67,4 @@ func reorderName(input []string) string {
 		return "Country Code " + countryCode + " Invalid"
 	}
 
-}
-
-func main() {
-
-	args := os.Args[1:]
-
-	println("Output: " + reorderName(args))
 }

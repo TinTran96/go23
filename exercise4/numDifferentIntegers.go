@@ -1,7 +1,6 @@
-package main
+package ex4
 
 import (
-	"fmt"
 	"strconv"
 )
 
@@ -41,22 +40,4 @@ func NumDifferentIntegers(word string) []int {
 	}
 	return arrInt
 
-}
-
-func printResult(arrInt []int) {
-	fmt.Printf("%d(", len(arrInt))
-	sizeArrInt := len(arrInt)
-	for i := 0; i < sizeArrInt; i++ {
-		fmt.Printf("%d", arrInt[i])
-		if i != (sizeArrInt - 1) {
-			fmt.Printf(", ")
-		}
-	}
-	fmt.Printf(")")
-}
-
-func main() {
-	word := "a123bc34d8ef34"
-
-	printResult(NumDifferentIntegers(word))
 }
