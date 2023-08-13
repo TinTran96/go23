@@ -14,7 +14,7 @@ type Product struct {
 	Price       float32 `json:"price"`
 }
 
-var Products []Product
+var products []Product
 
 func RemoveIndex(s []Product, index int) []Product {
 	return append(s[:index], s[index+1:]...)
